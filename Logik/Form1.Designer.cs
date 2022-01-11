@@ -43,6 +43,8 @@
             this.pBox.TabIndex = 0;
             this.pBox.TabStop = false;
             this.pBox.Paint += new System.Windows.Forms.PaintEventHandler(this.pBox_Paint);
+            this.pBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pBox_MouseClick);
+            this.pBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pBox_MouseClick);
             // 
             // btnEvalute
             // 
@@ -69,6 +71,7 @@
             this.btnNewGame.TabIndex = 2;
             this.btnNewGame.Text = "Nová hra";
             this.btnNewGame.UseVisualStyleBackColor = false;
+            this.btnNewGame.Click += new System.EventHandler(this.btnNewGame_Click);
             // 
             // Form1
             // 

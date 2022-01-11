@@ -37,5 +37,28 @@ namespace Logik
                 combinations[i].Draw(e.Graphics,new PointF(10,10+i* size * 1.25F), size);
             }
         }
+
+        private void pBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            for (int i = 0; i < combinations.Length; i++)
+            {
+                foreach (var pin in combinations[i].Pins)
+                {
+                    if (pin.Region.IsVisible(e.Location))
+                    {
+                        pin.State++;
+                        if (pin.State > Pin.PinState.Color6)
+                            pin.State = Pin.PinState.Color1;
+                    }
+                }
+            }
+            pBox.Refresh();
+        }
+
+        private void btnNewGame_Click(object sender, EventArgs e)
+        {
+            SetDefaults();
+            pBox.Refresh();
+        }
     }
 }
