@@ -42,6 +42,7 @@
             this.pBox.Size = new System.Drawing.Size(367, 427);
             this.pBox.TabIndex = 0;
             this.pBox.TabStop = false;
+            this.pBox.Paint += new System.Windows.Forms.PaintEventHandler(this.pBox_Paint);
             // 
             // btnEvalute
             // 
